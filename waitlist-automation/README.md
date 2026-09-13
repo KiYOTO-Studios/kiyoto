@@ -73,3 +73,20 @@ To enable the system to automatically send broadcasts whenever you email from `c
 - Set the subject as: `[KiYOTO Broadcast] The KiYOTO website is now live`
 - Click **Send**.
 - Within 5 minutes, the script will automatically BCC that email to all subscribers on your waitlist and label the thread as `KiYOTO-Broadcasted` so it is never sent twice!
+
+---
+
+## How Unsubscribing Works (3 Ways)
+
+1. **Automatic 1-Click Link**:
+   - Every email sent from the script includes a 1-click unsubscribe link in the footer.
+   - When a subscriber clicks it, Google Apps Script sets their status to `Unsubscribed` in your Google Sheet immediately.
+2. **Reply with "Unsubscribe"**:
+   - The footer states: *"To unsubscribe, reply with 'Unsubscribe' or email contactkiyoto@gmail.com"*.
+   - If anyone replies, you can remove them or update their status in the sheet.
+3. **Manual Control in Google Sheets**:
+   - Open your Google Sheet (`Subscribers` tab).
+   - Find the subscriber's row.
+   - In **Column C (`Status`)**, change `Active` to `Unsubscribed` (or delete the row).
+   - The script automatically filters out anyone marked `Unsubscribed` from all future broadcasts.
+

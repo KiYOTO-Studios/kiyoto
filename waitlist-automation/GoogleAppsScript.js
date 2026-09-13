@@ -78,9 +78,27 @@ function doPost(e) {
     // Send instant welcome email
     if (CONFIG.SEND_WELCOME_EMAIL) {
       try {
-        GmailApp.sendEmail(email, CONFIG.WELCOME_SUBJECT, "You are on the KiYOTO waitlist. We will notify you when we release new updates.", {
+        let webAppUrl = "";
+        try { webAppUrl = ScriptApp.getService().getUrl(); } catch (e) {}
+        const unsubUrl = webAppUrl 
+          ? `${webAppUrl}?action=unsubscribe&email=${encodeURIComponent(email)}` 
+          : `mailto:${CONFIG.SENDER_EMAIL}?subject=Unsubscribe`;
+
+        const welcomeHtml = `
+          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 560px; margin: 0 auto; padding: 40px 20px; color: #0a0a0a; line-height: 1.6;">
+            <h2 style="font-size: 24px; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 20px;">You are on the list.</h2>
+            <p style="color: #444; font-size: 15px;">Thank you for joining the KiYOTO waitlist. We are crafting something special and will notify you the moment we launch or release new products.</p>
+            <div style="margin-top: 36px; padding-top: 20px; border-top: 1px solid #eaeaea; font-size: 12px; color: #888; line-height: 1.6;">
+              KiYOTO &mdash; <a href="https://x.com/madebykiyoto" style="color: #0a0a0a; text-decoration: none;">@madebykiyoto</a><br>
+              Subscription is optional and can be cancelled anytime.<br>
+              To unsubscribe, <a href="${unsubUrl}" style="color: #666; text-decoration: underline;">click here to unsubscribe</a> or reply with &ldquo;Unsubscribe&rdquo;.
+            </div>
+          </div>
+        `;
+
+        GmailApp.sendEmail(email, CONFIG.WELCOME_SUBJECT, "You are on the KiYOTO waitlist. We will notify you when we release new updates.\n\nTo unsubscribe, reply with 'Unsubscribe' or email contactkiyoto@gmail.com.", {
           name: CONFIG.SENDER_NAME,
-          htmlBody: CONFIG.WELCOME_BODY_HTML
+          htmlBody: welcomeHtml
         });
       } catch (emailErr) {
         Logger.log("Error sending welcome email: " + emailErr.message);
@@ -103,9 +121,55 @@ function doPost(e) {
 }
 
 /**
- * Test endpoint for browser GET
+ * Handles browser GET requests:
+ * 1. 1-Click Unsubscribe: ?action=unsubscribe&email=...
+ * 2. Health check: displays API status
  */
 function doGet(e) {
+  if (e && e.parameter && (e.parameter.action === "unsubscribe" || e.parameter.unsubscribe)) {
+    const emailToUnsub = (e.parameter.email || e.parameter.unsubscribe || "").trim().toLowerCase();
+    if (emailToUnsub) {
+      const sheet = getOrCreateSheet();
+      const data = sheet.getDataRange().getValues();
+      let found = false;
+      for (let i = 1; i < data.length; i++) {
+        if ((data[i][0] || "").toString().trim().toLowerCase() === emailToUnsub) {
+          sheet.getRange(i + 1, 3).setValue("Unsubscribed");
+          found = true;
+        }
+      }
+      const heading = found ? "Unsubscribed" : "Notice";
+      const message = found 
+        ? `<strong>${emailToUnsub}</strong> has been successfully unsubscribed from the KiYOTO waitlist. You will not receive any further emails.` 
+        : `Email (${emailToUnsub}) was not found or is already unsubscribed.`;
+
+      return HtmlService.createHtmlOutput(`
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Unsubscribe &mdash; KiYOTO</title>
+          <style>
+            body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #fafaf8; color: #0a0a0a; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 20px; box-sizing: border-box; }
+            .card { background: #ffffff; padding: 40px 32px; border-radius: 20px; border: 1px solid rgba(10,10,10,0.08); max-width: 440px; text-align: center; box-shadow: 0 12px 36px rgba(0,0,0,0.04); }
+            h1 { font-size: 20px; font-weight: 600; margin: 0 0 12px 0; letter-spacing: -0.01em; }
+            p { color: rgba(10,10,10,0.65); font-size: 14px; line-height: 1.6; margin: 0 0 24px 0; }
+            a { display: inline-block; padding: 8px 18px; background: #0a0a0a; color: #fafaf8; border-radius: 999px; text-decoration: none; font-size: 13px; font-weight: 500; }
+          </style>
+        </head>
+        <body>
+          <div class="card">
+            <h1>${heading}</h1>
+            <p>${message}</p>
+            <a href="https://madebykiyoto.com">&larr; Return to KiYOTO</a>
+          </div>
+        </body>
+        </html>
+      `).setTitle("Unsubscribe — KiYOTO");
+    }
+  }
+
   return ContentService.createTextOutput(JSON.stringify({
     status: "ok",
     message: "KiYOTO Waitlist Automation API is live."
@@ -147,14 +211,26 @@ function checkAndSendBroadcasts() {
 
     Logger.log(`Broadcasting to ${subscribers.length} subscribers: "${cleanSubject}"`);
 
+    const broadcastFooterHtml = `
+      <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eaeaea; font-size: 12px; color: #888; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.5;">
+        KiYOTO &mdash; <a href="https://x.com/madebykiyoto" style="color: #0a0a0a; text-decoration: none;">@madebykiyoto</a><br>
+        You received this email because you are on the KiYOTO waitlist. Subscription is optional.<br>
+        To unsubscribe, reply to this email with &ldquo;Unsubscribe&rdquo; or contact contactkiyoto@gmail.com.
+      </div>
+    `;
+    const broadcastFooterPlain = `\n\n---\nKiYOTO — @madebykiyoto\nTo unsubscribe, reply with 'Unsubscribe' or email contactkiyoto@gmail.com.`;
+
+    const finalHtml = bodyHtml + broadcastFooterHtml;
+    const finalPlain = bodyPlain + broadcastFooterPlain;
+
     // Broadcast using BCC batches to respect Gmail rate limits
     const BATCH_SIZE = 50;
     for (let i = 0; i < subscribers.length; i += BATCH_SIZE) {
       const batch = subscribers.slice(i, i + BATCH_SIZE);
-      GmailApp.sendEmail(CONFIG.SENDER_EMAIL, cleanSubject, bodyPlain, {
+      GmailApp.sendEmail(CONFIG.SENDER_EMAIL, cleanSubject, finalPlain, {
         name: CONFIG.SENDER_NAME,
         bcc: batch.join(","),
-        htmlBody: bodyHtml
+        htmlBody: finalHtml
       });
       Utilities.sleep(1000); // 1s pause between batches
     }
@@ -215,14 +291,26 @@ function sendBroadcastFromDraftPrompt() {
   const bodyPlain = selectedDraft.getPlainBody();
   const bodyHtml = selectedDraft.getBody();
 
+  const broadcastFooterHtml = `
+    <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eaeaea; font-size: 12px; color: #888; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.5;">
+      KiYOTO &mdash; <a href="https://x.com/madebykiyoto" style="color: #0a0a0a; text-decoration: none;">@madebykiyoto</a><br>
+      You received this email because you are on the KiYOTO waitlist. Subscription is optional.<br>
+      To unsubscribe, reply to this email with &ldquo;Unsubscribe&rdquo; or contact contactkiyoto@gmail.com.
+    </div>
+  `;
+  const broadcastFooterPlain = `\n\n---\nKiYOTO — @madebykiyoto\nTo unsubscribe, reply with 'Unsubscribe' or email contactkiyoto@gmail.com.`;
+
+  const finalHtml = bodyHtml + broadcastFooterHtml;
+  const finalPlain = bodyPlain + broadcastFooterPlain;
+
   // Send in BCC batches
   const BATCH_SIZE = 50;
   for (let i = 0; i < subscribers.length; i += BATCH_SIZE) {
     const batch = subscribers.slice(i, i + BATCH_SIZE);
-    GmailApp.sendEmail(CONFIG.SENDER_EMAIL, subject, bodyPlain, {
+    GmailApp.sendEmail(CONFIG.SENDER_EMAIL, subject, finalPlain, {
       name: CONFIG.SENDER_NAME,
       bcc: batch.join(","),
-      htmlBody: bodyHtml
+      htmlBody: finalHtml
     });
     Utilities.sleep(1000);
   }
