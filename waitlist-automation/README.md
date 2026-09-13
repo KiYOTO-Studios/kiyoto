@@ -90,3 +90,16 @@ To enable the system to automatically send broadcasts whenever you email from `c
    - In **Column C (`Status`)**, change `Active` to `Unsubscribed` (or delete the row).
    - The script automatically filters out anyone marked `Unsubscribed` from all future broadcasts.
 
+---
+
+## What If an Unsubscribed User Wants to Subscribe Again?
+
+They simply visit the website and submit the **"Join the wait"** form again!
+The system handles it automatically:
+1. It checks the Google Sheet for their email.
+2. It automatically updates their status from `Unsubscribed` back to `Active`.
+3. It updates their timestamp to the new submission date.
+4. It sends them a fresh welcome email confirming they are back on the list.
+5. They are automatically included in all future broadcasts without any duplicate rows created.
+
+

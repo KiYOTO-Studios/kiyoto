@@ -60,20 +60,42 @@ function doPost(e) {
     }
 
     const sheet = getOrCreateSheet();
-    const emails = getAllSubscribers(sheet);
+    const data = sheet.getDataRange().getValues();
+    let existingRowIndex = -1;
+    let existingStatus = "";
 
-    // Check for duplicates
-    if (emails.includes(email)) {
-      return ContentService.createTextOutput(JSON.stringify({
-        status: "success",
-        message: "Already subscribed",
-        alreadySubscribed: true
-      })).setMimeType(ContentService.MimeType.JSON);
+    for (let i = 1; i < data.length; i++) {
+      const rowEmail = (data[i][0] || "").toString().trim().toLowerCase();
+      if (rowEmail === email) {
+        existingRowIndex = i + 1; // 1-indexed row number in Google Sheets
+        existingStatus = (data[i][2] || "").toString().trim().toLowerCase();
+        break;
+      }
     }
 
-    // Append to sheet: [Email, Timestamp, Status, Source]
     const timestamp = new Date();
-    sheet.appendRow([email, timestamp, "Active", source]);
+
+    if (existingRowIndex > 0) {
+      if (existingStatus === "active") {
+        // Already actively subscribed
+        lock.releaseLock();
+        return ContentService.createTextOutput(JSON.stringify({
+          status: "success",
+          message: "Already subscribed",
+          alreadySubscribed: true
+        })).setMimeType(ContentService.MimeType.JSON);
+      } else {
+        // Was unsubscribed -> Re-activate their subscription!
+        sheet.getRange(existingRowIndex, 2).setValue(timestamp);
+        sheet.getRange(existingRowIndex, 3).setValue("Active");
+        sheet.getRange(existingRowIndex, 4).setValue(source);
+        Logger.log(`Subscriber re-activated: ${email}`);
+      }
+    } else {
+      // Brand new subscriber
+      sheet.appendRow([email, timestamp, "Active", source]);
+      Logger.log(`New subscriber added: ${email}`);
+    }
 
     // Send instant welcome email
     if (CONFIG.SEND_WELCOME_EMAIL) {
