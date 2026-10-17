@@ -172,5 +172,41 @@
       &copy; 2026 KiYOTO. All rights reserved. &middot; <a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms</a> &middot; <a href="/refunds">Refund Policy</a>
     </footer>
   </div>
+  <script>
+    (function () {
+      const backBtn = document.querySelector('.nav-back');
+      if (backBtn) {
+        backBtn.addEventListener('click', function (e) {
+          if (window.history.length > 1 && document.referrer && (new URL(document.referrer, window.location.href).origin === window.location.origin || window.location.protocol === 'file:')) {
+            e.preventDefault();
+            window.history.back();
+            return;
+          }
+          if (window.location.protocol === 'file:') {
+            e.preventDefault();
+            window.location.href = 'index.html';
+          }
+        });
+      }
+
+      document.querySelectorAll('a[href="/"]').forEach(function (link) {
+        if (link !== backBtn) {
+          link.addEventListener('click', function (e) {
+            if (window.location.protocol === 'file:') {
+              e.preventDefault();
+              window.location.href = 'index.html';
+            }
+          });
+        }
+      });
+
+      if (window.location.protocol === 'file:') {
+        document.querySelectorAll('a[href^="/"]').forEach(function (link) {
+          const path = link.getAttribute('href').replace(/^\//, '');
+          if (path) link.setAttribute('href', path + '.html');
+        });
+      }
+    })();
+  </script>
 </body>
 </html>

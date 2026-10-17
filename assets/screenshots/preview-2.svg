@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#161519"/>
+      <stop offset="100%" stop-color="#0a0a0d"/>
+    </linearGradient>
+    <linearGradient id="nodeGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2c2a33" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#18171d" stop-opacity="0.8"/>
+    </linearGradient>
+    <linearGradient id="nodeGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#242229" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#141317" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg2)"/>
+
+  <!-- Top App Bar -->
+  <rect x="0" y="0" width="800" height="44" fill="#0d0d10" fill-opacity="0.9"/>
+  <line x1="0" y1="44" x2="800" y2="44" stroke="#ffffff" stroke-opacity="0.08"/>
+
+  <!-- Window controls -->
+  <circle cx="24" cy="22" r="5" fill="#ffffff" fill-opacity="0.2"/>
+  <circle cx="40" cy="22" r="5" fill="#ffffff" fill-opacity="0.2"/>
+  <circle cx="56" cy="22" r="5" fill="#ffffff" fill-opacity="0.2"/>
+
+  <!-- Breadcrumbs -->
+  <text x="80" y="27" fill="#ffffff" fill-opacity="0.4" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="11">Workflow /</text>
+  <text x="145" y="27" fill="#ffffff" fill-opacity="0.85" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="11" font-weight="600">Computational Engine</text>
+
+  <!-- Node Connection lines with glowing Bezier curves -->
+  <path d="M 240 180 C 330 180, 310 260, 400 260" fill="none" stroke="#ffffff" stroke-width="2" stroke-opacity="0.35"/>
+  <path d="M 240 320 C 330 320, 310 260, 400 260" fill="none" stroke="#ffffff" stroke-width="2" stroke-opacity="0.35"/>
+  <path d="M 580 260 C 640 260, 630 210, 690 210" fill="none" stroke="#ffffff" stroke-width="2" stroke-opacity="0.35"/>
+  <path d="M 580 260 C 640 260, 630 330, 690 330" fill="none" stroke="#ffffff" stroke-width="2" stroke-opacity="0.35"/>
+
+  <!-- Node 1 (Input) -->
+  <rect x="60" y="130" width="180" height="100" rx="14" fill="url(#nodeGrad1)" stroke="#ffffff" stroke-opacity="0.12"/>
+  <rect x="76" y="146" width="70" height="8" rx="4" fill="#ffffff" fill-opacity="0.3"/>
+  <rect x="76" y="166" width="148" height="6" rx="3" fill="#ffffff" fill-opacity="0.1"/>
+  <rect x="76" y="180" width="110" height="6" rx="3" fill="#ffffff" fill-opacity="0.1"/>
+  <circle cx="240" cy="180" r="5" fill="#ffffff"/>
+
+  <!-- Node 2 (Model / Generator) -->
+  <rect x="60" y="270" width="180" height="100" rx="14" fill="url(#nodeGrad1)" stroke="#ffffff" stroke-opacity="0.12"/>
+  <rect x="76" y="286" width="90" height="8" rx="4" fill="#ffffff" fill-opacity="0.3"/>
+  <rect x="76" y="306" width="148" height="6" rx="3" fill="#ffffff" fill-opacity="0.1"/>
+  <rect x="76" y="320" width="130" height="6" rx="3" fill="#ffffff" fill-opacity="0.1"/>
+  <circle cx="240" cy="320" r="5" fill="#ffffff"/>
+
+  <!-- Node 3 (Central Processor - Highlighted) -->
+  <rect x="400" y="190" width="180" height="140" rx="16" fill="url(#nodeGrad2)" stroke="#ffffff" stroke-opacity="0.25" filter="drop-shadow(0 15px 35px rgba(0,0,0,0.5))"/>
+  <rect x="420" y="210" width="100" height="10" rx="5" fill="#ffffff" fill-opacity="0.6"/>
+  <rect x="420" y="234" width="140" height="6" rx="3" fill="#ffffff" fill-opacity="0.15"/>
+  <rect x="420" y="248" width="120" height="6" rx="3" fill="#ffffff" fill-opacity="0.15"/>
+  <rect x="420" y="272" width="140" height="38" rx="8" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.1"/>
+  <circle cx="400" cy="260" r="5" fill="#ffffff"/>
+  <circle cx="580" cy="260" r="5" fill="#ffffff"/>
+
+  <!-- Node 4 (Output A) -->
+  <rect x="690" y="160" width="90" height="90" rx="12" fill="url(#nodeGrad1)" stroke="#ffffff" stroke-opacity="0.1"/>
+  <circle cx="690" cy="210" r="5" fill="#ffffff"/>
+
+  <!-- Node 5 (Output B) -->
+  <rect x="690" y="280" width="90" height="90" rx="12" fill="url(#nodeGrad1)" stroke="#ffffff" stroke-opacity="0.1"/>
+  <circle cx="690" cy="330" r="5" fill="#ffffff"/>
+
+  <!-- Bottom status pill -->
+  <rect x="330" y="440" width="140" height="28" rx="14" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.1"/>
+  <circle cx="346" cy="454" r="4" fill="#52c41a"/>
+  <text x="358" y="458" fill="#ffffff" fill-opacity="0.8" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="11" font-weight="500">Pipeline Active</text>
+</svg>

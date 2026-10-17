@@ -1153,6 +1153,14 @@
           emailInput.focus();
         }
       });
+
+      // Seamless offline/local preview support for clean URLs
+      if (window.location.protocol === 'file:') {
+        document.querySelectorAll('a[href^="/"]').forEach(function (link) {
+          const path = link.getAttribute('href').replace(/^\//, '');
+          if (path) link.setAttribute('href', path + '.html');
+        });
+      }
     })();
   </script>
   <!-- KiYOTO Studios -->
