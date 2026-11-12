@@ -7,6 +7,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <title>Refund & Cancellation Policy — KiYOTO</title>
+<link rel="icon" type="image/png" href="/assets/logos/websitetitleicon.png">
+<link rel="apple-touch-icon" href="/assets/logos/websitetitleicon.png">
 <meta name="description" content="Refund and subscription cancellation policy for KiYOTO.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -204,10 +206,26 @@
       });
 
       if (window.location.protocol === 'file:') {
+        document.querySelectorAll('link[rel="icon"], link[rel="apple-touch-icon"]').forEach(function (link) {
+          const h = link.getAttribute('href');
+          if (h && h.startsWith('/')) link.setAttribute('href', h.replace(/^\//, ''));
+        });
         document.querySelectorAll('a[href^="/"]').forEach(function (link) {
           const path = link.getAttribute('href').replace(/^\//, '');
           if (path) link.setAttribute('href', path + '.html');
         });
+      } else {
+        const pathSegs = window.location.pathname.split('/').filter(Boolean);
+        const locales = ['de','ja','jp','ko','kr','es','fr','pt','zh','it','nl','ru','ar','hi','tr'];
+        if (pathSegs.length > 0 && locales.includes(pathSegs[0].toLowerCase())) {
+          const prefix = '/' + pathSegs[0].toLowerCase();
+          document.querySelectorAll('a[href^="/"]').forEach(function(link) {
+            const h = link.getAttribute('href');
+            if (!h.startsWith(prefix) && !h.startsWith('//')) {
+              link.setAttribute('href', prefix + (h === '/' ? '' : h));
+            }
+          });
+        }
       }
     })();
   </script>

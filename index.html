@@ -8,6 +8,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <title>KiYOTO — Coming very soon.</title>
+  <link rel="icon" type="image/png" href="/assets/logos/websitetitleicon.png">
+  <link rel="apple-touch-icon" href="/assets/logos/websitetitleicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -508,9 +510,17 @@
       transition: background 0.2s ease;
     }
 
-    .gallery-card:hover .window-dot:nth-child(1) { background: #ff5f56; }
-    .gallery-card:hover .window-dot:nth-child(2) { background: #ffbd2e; }
-    .gallery-card:hover .window-dot:nth-child(3) { background: #27c93f; }
+    .gallery-card:hover .window-dot:nth-child(1) {
+      background: #ff5f56;
+    }
+
+    .gallery-card:hover .window-dot:nth-child(2) {
+      background: #ffbd2e;
+    }
+
+    .gallery-card:hover .window-dot:nth-child(3) {
+      background: #27c93f;
+    }
 
     .window-tag {
       font-size: 0.68rem;
@@ -657,13 +667,25 @@
     }
 
     @keyframes lightboxFadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
     }
 
     @keyframes lightboxScaleUp {
-      from { opacity: 0; transform: scale(0.95) translateY(10px); }
-      to { opacity: 1; transform: scale(1) translateY(0); }
+      from {
+        opacity: 0;
+        transform: scale(0.95) translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
     }
 
     .lightbox-header {
@@ -746,8 +768,13 @@
       transform: translateY(-50%) scale(1.08);
     }
 
-    .lightbox-prev { left: 1rem; }
-    .lightbox-next { right: 1rem; }
+    .lightbox-prev {
+      left: 1rem;
+    }
+
+    .lightbox-next {
+      right: 1rem;
+    }
 
     .lightbox-footer {
       display: flex;
@@ -1235,6 +1262,135 @@
       border: 0;
     }
 
+    /* ---------- Language Switcher ---------- */
+    .lang-switcher {
+      position: relative;
+      display: inline-flex;
+      z-index: 100;
+    }
+
+    .lang-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.28rem 0.6rem;
+      background: rgba(255, 255, 255, 0.55);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(10, 10, 10, 0.08);
+      border-radius: 999px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--ink-soft);
+      cursor: pointer;
+      transition: all 0.22s ease;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .lang-btn:hover {
+      background: rgba(255, 255, 255, 0.9);
+      border-color: rgba(10, 10, 10, 0.18);
+      color: var(--ink);
+    }
+
+    .lang-btn svg {
+      opacity: 0.55;
+      transition: opacity 0.2s ease;
+    }
+
+    .lang-btn:hover svg {
+      opacity: 0.85;
+    }
+
+    .lang-dropdown {
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(10, 10, 10, 0.1);
+      border-radius: 16px;
+      padding: 0.45rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.1rem;
+      box-shadow: 0 12px 40px rgba(10, 10, 10, 0.12), 0 2px 8px rgba(10, 10, 10, 0.04);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateX(-50%) translateY(6px);
+      transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+        visibility 0.22s;
+      min-width: 220px;
+      max-width: calc(100vw - 24px);
+      max-height: 340px;
+      overflow-y: auto;
+    }
+
+    body.rtl {
+      direction: rtl;
+    }
+
+    body.rtl .waitlist-arrow {
+      transform: rotate(180deg);
+    }
+
+    .lang-dropdown.is-open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .lang-option {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.42rem 0.65rem;
+      border-radius: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.74rem;
+      font-weight: 500;
+      color: var(--ink-soft);
+      text-decoration: none;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+      cursor: pointer;
+      border: none;
+      background: none;
+      width: 100%;
+      text-align: left;
+    }
+
+    .lang-option:hover {
+      background: rgba(10, 10, 10, 0.05);
+      color: var(--ink);
+    }
+
+    .lang-option.active {
+      color: var(--ink);
+      font-weight: 600;
+      background: rgba(10, 10, 10, 0.04);
+    }
+
+    .lang-option-code {
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      min-width: 1.4em;
+    }
+
+    .lang-option.active .lang-option-code {
+      color: var(--ink-soft);
+    }
+
     /* ---------- iOS & Android Mobile Enhancements (Zero PC changes) ---------- */
     @media (max-width: 640px) {
 
@@ -1347,8 +1503,13 @@
         height: 36px;
       }
 
-      .lightbox-prev { left: 0.5rem; }
-      .lightbox-next { right: 0.5rem; }
+      .lightbox-prev {
+        left: 0.5rem;
+      }
+
+      .lightbox-next {
+        right: 0.5rem;
+      }
 
       .about-footer-cta {
         padding: 2rem 1rem 1rem;
@@ -1599,7 +1760,7 @@
       </button>
     </div>
 
-    <h1 class="headline">Coming <span class="fancy">very</span> soon.</h1>
+    <h1 class="headline" data-i18n="headline">Coming <span class="fancy">very</span> soon.</h1>
 
     <div class="socials">
       <a href="https://x.com/madebykiyoto" target="_blank" rel="noopener">X</a>
@@ -1613,7 +1774,7 @@
     <div class="waitlist-wrap">
       <button type="button" class="waitlist-btn" id="openWaitlistBtn" aria-haspopup="dialog" aria-expanded="false"
         aria-controls="waitlistModal">
-        <span>Join the wait</span>
+        <span data-i18n="waitlist_btn">Join the wait</span>
         <svg class="waitlist-arrow" width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
           <path d="M6 3.5L10.5 8L6 12.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
             stroke-linejoin="round" />
@@ -1631,7 +1792,7 @@
           <path d="M10 12.5L5.5 8L10 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
             stroke-linejoin="round" />
         </svg>
-        <span>Back</span>
+        <span data-i18n="back_btn">Back</span>
       </button>
     </nav>
 
@@ -1639,9 +1800,9 @@
     <div class="about-scroll-container">
       <div class="about-content">
         <div class="about-header">
-          <span class="about-eyebrow">Studio & Philosophy</span>
-          <h2 class="about-hero-title"> <span class="fancy">About</span> Us.</h2>
-          <p class="about-lead">
+          <span class="about-eyebrow" data-i18n="about_eyebrow">Studio & Philosophy</span>
+          <h2 class="about-hero-title" data-i18n="about_hero_title"> <span class="fancy">About</span> Us.</h2>
+          <p class="about-lead" data-i18n="about_lead">
             KiYOTO was founded on a singular conviction: the digital tools for young entrepeneurs to make their
             products, should all be in one spot.
           </p>
@@ -1650,26 +1811,29 @@
         <!-- Screenshot Gallery Showcase -->
         <div class="about-gallery" id="aboutGallery">
           <!-- Screenshot 01 -->
-          <article class="gallery-card" data-index="0" tabindex="0" role="button" aria-label="View Studio Canvas screenshot in full resolution">
+          <article class="gallery-card" data-index="0" tabindex="0" role="button"
+            aria-label="View Studio Canvas screenshot in full resolution">
             <div class="gallery-window-bar">
               <div class="window-dots" aria-hidden="true">
                 <span class="window-dot"></span>
                 <span class="window-dot"></span>
                 <span class="window-dot"></span>
               </div>
-              <span class="window-tag">Sneak Peek 01</span>
+              <span class="window-tag" data-i18n="sneak_peek_01">Sneak Peek 01</span>
             </div>
 
             <div class="gallery-preview-wrap">
               <!-- REPLACE SRC BELOW WITH YOUR SNEAK-PEEK PICTURE (e.g. assets/screenshots/preview-1.png) -->
-              <img class="gallery-img" src="assets/screenshots/preview-1.png" alt="KiYOTO Account Preference Interface" loading="lazy" />
+              <img class="gallery-img" src="assets/screenshots/preview-1.png" alt="KiYOTO Account Preference Interface"
+                loading="lazy" />
               <div class="gallery-hover-overlay" aria-hidden="true">
                 <span class="gallery-zoom-pill">
                   <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
-                    <path d="M7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10zM14 14l-3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M7 4.5v5M4.5 7h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10zM14 14l-3.5-3.5" stroke="currentColor"
+                      stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M7 4.5v5M4.5 7h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
                   </svg>
-                  <span>Expand</span>
+                  <span data-i18n="expand">Expand</span>
                 </span>
               </div>
             </div>
@@ -1677,33 +1841,36 @@
             <div class="gallery-info">
               <div class="gallery-header-row">
                 <span class="gallery-index">01</span>
-                <h3 class="gallery-title">User Preference</h3>
+                <h3 class="gallery-title" data-i18n="gallery_title_1">User Preference</h3>
               </div>
-              <p class="gallery-desc">Initiates a user preference page after account creation.</p>
+              <p class="gallery-desc" data-i18n="gallery_desc_1">Initiates a user preference page after account creation.</p>
             </div>
           </article>
 
           <!-- Screenshot 02 -->
-          <article class="gallery-card" data-index="1" tabindex="0" role="button" aria-label="View Computational Craft screenshot in full resolution">
+          <article class="gallery-card" data-index="1" tabindex="0" role="button"
+            aria-label="View Computational Craft screenshot in full resolution">
             <div class="gallery-window-bar">
               <div class="window-dots" aria-hidden="true">
                 <span class="window-dot"></span>
                 <span class="window-dot"></span>
                 <span class="window-dot"></span>
               </div>
-              <span class="window-tag">Sneak Peek 02</span>
+              <span class="window-tag" data-i18n="sneak_peek_02">Sneak Peek 02</span>
             </div>
 
             <div class="gallery-preview-wrap">
               <!-- REPLACE SRC BELOW WITH YOUR SNEAK-PEEK PICTURE (e.g. assets/screenshots/preview-2.png) -->
-              <img class="gallery-img" src="assets/screenshots/preview-2.png" alt="KiYOTO Home Interface" loading="lazy" />
+              <img class="gallery-img" src="assets/screenshots/preview-2.png" alt="KiYOTO Home Interface"
+                loading="lazy" />
               <div class="gallery-hover-overlay" aria-hidden="true">
                 <span class="gallery-zoom-pill">
                   <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
-                    <path d="M7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10zM14 14l-3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M7 4.5v5M4.5 7h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10zM14 14l-3.5-3.5" stroke="currentColor"
+                      stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M7 4.5v5M4.5 7h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
                   </svg>
-                  <span>Expand</span>
+                  <span data-i18n="expand">Expand</span>
                 </span>
               </div>
             </div>
@@ -1711,33 +1878,36 @@
             <div class="gallery-info">
               <div class="gallery-header-row">
                 <span class="gallery-index">02</span>
-                <h3 class="gallery-title">App Home Interface</h3>
+                <h3 class="gallery-title" data-i18n="gallery_title_2">App Home Interface</h3>
               </div>
-              <p class="gallery-desc">A slick, modern and adjustable home page.</p>
+              <p class="gallery-desc" data-i18n="gallery_desc_2">A slick, modern and adjustable home page.</p>
             </div>
           </article>
 
           <!-- Screenshot 03 -->
-          <article class="gallery-card" data-index="2" tabindex="0" role="button" aria-label="View The Horizon screenshot in full resolution">
+          <article class="gallery-card" data-index="2" tabindex="0" role="button"
+            aria-label="View The Horizon screenshot in full resolution">
             <div class="gallery-window-bar">
               <div class="window-dots" aria-hidden="true">
                 <span class="window-dot"></span>
                 <span class="window-dot"></span>
                 <span class="window-dot"></span>
               </div>
-              <span class="window-tag">Sneak Peek 03</span>
+              <span class="window-tag" data-i18n="sneak_peek_03">Sneak Peek 03</span>
             </div>
 
             <div class="gallery-preview-wrap">
               <!-- REPLACE SRC BELOW WITH YOUR SNEAK-PEEK PICTURE (e.g. assets/screenshots/preview-3.png) -->
-              <img class="gallery-img" src="assets/screenshots/preview-3.png" alt="KiYOTO Plans Interface" loading="lazy" />
+              <img class="gallery-img" src="assets/screenshots/preview-3.png" alt="KiYOTO Plans Interface"
+                loading="lazy" />
               <div class="gallery-hover-overlay" aria-hidden="true">
                 <span class="gallery-zoom-pill">
                   <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
-                    <path d="M7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10zM14 14l-3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M7 4.5v5M4.5 7h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10zM14 14l-3.5-3.5" stroke="currentColor"
+                      stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M7 4.5v5M4.5 7h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
                   </svg>
-                  <span>Expand</span>
+                  <span data-i18n="expand">Expand</span>
                 </span>
               </div>
             </div>
@@ -1745,17 +1915,17 @@
             <div class="gallery-info">
               <div class="gallery-header-row">
                 <span class="gallery-index">03</span>
-                <h3 class="gallery-title">App Plans</h3>
+                <h3 class="gallery-title" data-i18n="gallery_title_3">App Plans</h3>
               </div>
-              <p class="gallery-desc">Preview of the different app plans (subject to change).</p>
+              <p class="gallery-desc" data-i18n="gallery_desc_3">Preview of the different app plans (subject to change).</p>
             </div>
           </article>
         </div>
 
         <div class="about-footer-cta">
-          <p class="about-cta-text">Want sneaks and early notifications for releases?</p>
+          <p class="about-cta-text" data-i18n="about_cta">Want sneaks and early notifications for releases?</p>
           <button type="button" class="waitlist-btn about-waitlist-trigger" id="aboutOpenWaitlistBtn">
-            <span>Join the wait</span>
+            <span data-i18n="waitlist_btn">Join the wait</span>
             <svg class="waitlist-arrow" width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M6 3.5L10.5 8L6 12.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
                 stroke-linejoin="round" />
@@ -1768,15 +1938,23 @@
 
   <!-- Footer with Legal Links -->
   <footer class="site-footer">
-    <span>&copy; 2026 KiYOTO</span>
+    <span data-i18n="footer_copy">&copy; 2026 KiYOTO</span>
     <span class="footer-dot">&middot;</span>
-    <a href="/privacy">Privacy Policy</a>
+    <a href="/privacy" data-i18n="footer_privacy">Privacy Policy</a>
     <span class="footer-dot">&middot;</span>
-    <a href="/terms">Terms</a>
+    <a href="/terms" data-i18n="footer_terms">Terms</a>
     <span class="footer-dot">&middot;</span>
-    <a href="/cookies">Cookie Policy</a>
+    <a href="/cookies" data-i18n="footer_cookies">Cookie Policy</a>
     <span class="footer-dot">&middot;</span>
-    <a href="/refunds">Refund Policy</a>
+    <a href="/refunds" data-i18n="footer_refunds">Refund Policy</a>
+    <span class="footer-dot">&middot;</span>
+    <div class="lang-switcher" id="langSwitcher">
+      <button type="button" class="lang-btn" id="langBtn" aria-expanded="false" aria-haspopup="true" aria-label="Change language">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span id="langBtnLabel">English</span>
+      </button>
+      <div class="lang-dropdown" id="langDropdown" role="menu"></div>
+    </div>
   </footer>
 
   <!-- Modal Interface -->
@@ -1787,8 +1965,8 @@
       <button type="button" class="modal-close" id="modalCloseBtn" aria-label="Close dialog">&times;</button>
 
       <div id="modalFormView">
-        <h2 class="modal-title" id="modalTitle">Join the <span class="fancy">waitlist</span></h2>
-        <p class="modal-desc" id="modalDesc">
+        <h2 class="modal-title" id="modalTitle" data-i18n="modal_title">Join the <span class="fancy">waitlist</span></h2>
+        <p class="modal-desc" id="modalDesc" data-i18n="modal_desc">
           Be the first to know when KiYOTO launches or releases new products. Subscription is completely optional and
           can be cancelled at any time.
         </p>
@@ -1797,19 +1975,19 @@
           <div class="modal-field">
             <label for="modalEmail" class="sr-only">Email address</label>
             <input type="email" id="modalEmail" name="email" class="modal-input" placeholder="name@example.com"
-              autocomplete="email" required />
+              data-i18n-placeholder="email_placeholder" autocomplete="email" required />
           </div>
 
           <label class="consent-row">
             <input type="checkbox" id="modalConsent" class="consent-checkbox" required>
-            <span class="consent-text">
+            <span class="consent-text" data-i18n="consent_text">
               I consent to receive product and launch updates from KiYOTO. I can unsubscribe anytime. (<a
                 href="/privacy" target="_blank" rel="noopener">Privacy Policy</a>)
             </span>
           </label>
 
           <button type="submit" class="modal-submit" id="modalSubmitBtn">
-            <span class="btn-text">Notify Me</span>
+            <span class="btn-text" data-i18n="modal_submit">Notify Me</span>
             <span class="submit-spinner" aria-hidden="true"></span>
           </button>
 
@@ -1819,38 +1997,262 @@
 
       <div id="modalSuccessView" class="modal-success" hidden>
         <div class="success-icon">&#10003;</div>
-        <h3 class="success-title">You're on the <span class="fancy">list.</span></h3>
-        <p class="success-desc">Thank you for joining. We'll send an update from
+        <h3 class="success-title" data-i18n="success_title">You're on the <span class="fancy">list.</span></h3>
+        <p class="success-desc" data-i18n="success_desc">Thank you for joining. We'll send an update from
           <strong>contactkiyoto@gmail.com</strong> as soon as we launch.
         </p>
-        <button type="button" class="modal-done-btn" id="modalDoneBtn">Done</button>
+        <button type="button" class="modal-done-btn" id="modalDoneBtn" data-i18n="done_btn">Done</button>
       </div>
     </div>
   </div>
 
   <!-- Screenshot Lightbox Modal -->
-  <div class="gallery-lightbox" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="Screenshot Preview" hidden>
+  <div class="gallery-lightbox" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="Screenshot Preview"
+    hidden>
     <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
     <div class="lightbox-container">
       <div class="lightbox-header">
         <span class="lightbox-title" id="lightboxTitle">Studio Canvas</span>
-        <button type="button" class="lightbox-close" id="lightboxCloseBtn" aria-label="Close screenshot preview">&times;</button>
+        <button type="button" class="lightbox-close" id="lightboxCloseBtn"
+          aria-label="Close screenshot preview">&times;</button>
       </div>
       <div class="lightbox-media-wrap">
         <img class="lightbox-img" id="lightboxImg" src="" alt="Full Resolution App Preview" />
         <button type="button" class="lightbox-nav lightbox-prev" id="lightboxPrevBtn" aria-label="Previous screenshot">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12.5L5.5 8L10 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M10 12.5L5.5 8L10 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
         </button>
         <button type="button" class="lightbox-nav lightbox-next" id="lightboxNextBtn" aria-label="Next screenshot">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3.5L10.5 8L6 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M6 3.5L10.5 8L6 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
         </button>
       </div>
       <div class="lightbox-footer">
-        <p class="lightbox-caption" id="lightboxCaption">Tactile, unified workspace designed for calm and focused product creation.</p>
+        <p class="lightbox-caption" id="lightboxCaption">Tactile, unified workspace designed for calm and focused
+          product creation.</p>
         <span class="lightbox-counter" id="lightboxCounter">1 / 3</span>
       </div>
     </div>
   </div>
+
+  <!-- KiYOTO Internationalization (i18n) Engine -->
+  <script>
+    (function () {
+      const LOCALES = {
+        en: { name: 'English', native: 'English' },
+        de: { name: 'German', native: 'Deutsch' },
+        jp: { name: 'Japanese', native: '日本語' },
+        ja: { name: 'Japanese', native: '日本語' },
+        kr: { name: 'Korean', native: '한국어' },
+        ko: { name: 'Korean', native: '한국어' },
+        es: { name: 'Spanish', native: 'Español' },
+        fr: { name: 'French', native: 'Français' },
+        pt: { name: 'Portuguese', native: 'Português' },
+        zh: { name: 'Chinese', native: '中文' },
+        it: { name: 'Italian', native: 'Italiano' },
+        nl: { name: 'Dutch', native: 'Nederlands' },
+        ru: { name: 'Russian', native: 'Русский' },
+        ar: { name: 'Arabic', native: 'العربية', dir: 'rtl' },
+        hi: { name: 'Hindi', native: 'हिन्दी' },
+        tr: { name: 'Turkish', native: 'Türkçe' }
+      };
+
+      const DISPLAY_LOCALES = [
+        { code: 'en', label: 'English', short: 'EN' },
+        { code: 'de', label: 'Deutsch', short: 'DE' },
+        { code: 'jp', label: '日本語', short: 'JP' },
+        { code: 'kr', label: '한국어', short: 'KR' },
+        { code: 'es', label: 'Español', short: 'ES' },
+        { code: 'fr', label: 'Français', short: 'FR' },
+        { code: 'pt', label: 'Português', short: 'PT' },
+        { code: 'zh', label: '中文', short: 'ZH' },
+        { code: 'it', label: 'Italiano', short: 'IT' },
+        { code: 'nl', label: 'Nederlands', short: 'NL' },
+        { code: 'ru', label: 'Русский', short: 'RU' },
+        { code: 'ar', label: 'العربية', short: 'AR' },
+        { code: 'hi', label: 'हिन्दी', short: 'HI' },
+        { code: 'tr', label: 'Türkçe', short: 'TR' }
+      ];
+
+      // Parse current locale from URL path or ?lang= query parameter
+      const pathSegments = window.location.pathname.split('/').filter(Boolean);
+      let currentLocale = 'en';
+      let localeInPath = false;
+
+      if (pathSegments.length > 0 && LOCALES[pathSegments[0].toLowerCase()]) {
+        currentLocale = pathSegments[0].toLowerCase();
+        localeInPath = true;
+      } else {
+        try {
+          const urlParams = new URLSearchParams(window.location.search);
+          const qLang = urlParams.get('lang');
+          if (qLang && LOCALES[qLang.toLowerCase()]) {
+            currentLocale = qLang.toLowerCase();
+          }
+        } catch (e) { }
+      }
+
+      const basePath = localeInPath ? '/' + currentLocale : '';
+      const isRTL = LOCALES[currentLocale] && LOCALES[currentLocale].dir === 'rtl';
+
+      // Set cookie to remember user preference and prevent Vercel redirect loops
+      try {
+        const d = new Date();
+        d.setTime(d.getTime() + (365 * 24 * 60 * 60 * 1000));
+        document.cookie = 'KIYOTO_LOCALE=' + currentLocale + ';expires=' + d.toUTCString() + ';path=/;SameSite=Lax';
+      } catch (e) { }
+
+      document.documentElement.lang = currentLocale;
+      if (isRTL) {
+        document.documentElement.dir = 'rtl';
+        document.body.classList.add('rtl');
+      }
+
+      let translations = {};
+
+      window.__KIYOTO_I18N = {
+        locale: currentLocale,
+        basePath: basePath,
+        t: function (key, fallback) {
+          return (translations && translations[key]) || fallback || '';
+        }
+      };
+
+      function initSwitcher() {
+        const langBtn = document.getElementById('langBtn');
+        const langBtnLabel = document.getElementById('langBtnLabel');
+        const langDropdown = document.getElementById('langDropdown');
+        const langSwitcher = document.getElementById('langSwitcher');
+
+        if (!langBtn || !langDropdown) return;
+
+        const currentDisplay = DISPLAY_LOCALES.find(function (l) {
+          return l.code === currentLocale || (currentLocale === 'ja' && l.code === 'jp') || (currentLocale === 'ko' && l.code === 'kr');
+        }) || DISPLAY_LOCALES[0];
+
+        if (langBtnLabel) {
+          langBtnLabel.textContent = currentDisplay.label;
+        }
+
+        langDropdown.innerHTML = '';
+        DISPLAY_LOCALES.forEach(function (item) {
+          const opt = document.createElement('a');
+          const isCurrent = (item.code === currentLocale || (currentLocale === 'ja' && item.code === 'jp') || (currentLocale === 'ko' && item.code === 'kr'));
+          opt.className = 'lang-option' + (isCurrent ? ' active' : '');
+          opt.setAttribute('role', 'menuitem');
+
+          let targetPath = item.code === 'en' ? '/' : '/' + item.code;
+          const subSegments = pathSegments.filter(function (seg, idx) {
+            return !(idx === 0 && localeInPath);
+          });
+          if (subSegments.length > 0) {
+            const sub = subSegments.join('/');
+            targetPath = (targetPath === '/' ? '' : targetPath) + '/' + sub;
+          }
+          opt.href = targetPath || '/';
+
+          opt.innerHTML = '<span class="lang-option-code">' + item.short + '</span><span>' + item.label + '</span>';
+
+          opt.addEventListener('click', function () {
+            try {
+              const d = new Date();
+              d.setTime(d.getTime() + (365 * 24 * 60 * 60 * 1000));
+              document.cookie = 'KIYOTO_LOCALE=' + item.code + ';expires=' + d.toUTCString() + ';path=/;SameSite=Lax';
+            } catch (err) { }
+          });
+
+          langDropdown.appendChild(opt);
+        });
+
+        let isOpen = false;
+        function toggleDropdown(open) {
+          isOpen = typeof open === 'boolean' ? open : !isOpen;
+          if (isOpen) {
+            langDropdown.classList.add('is-open');
+            langBtn.setAttribute('aria-expanded', 'true');
+          } else {
+            langDropdown.classList.remove('is-open');
+            langBtn.setAttribute('aria-expanded', 'false');
+          }
+        }
+
+        langBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          toggleDropdown();
+        });
+
+        document.addEventListener('click', function (e) {
+          if (isOpen && langSwitcher && !langSwitcher.contains(e.target)) {
+            toggleDropdown(false);
+          }
+        });
+
+        document.addEventListener('keydown', function (e) {
+          if (isOpen && e.key === 'Escape') {
+            toggleDropdown(false);
+            langBtn.focus();
+          }
+        });
+      }
+
+      function prefixInternalLinks() {
+        if (!basePath) return;
+        document.querySelectorAll('a[href^="/"]').forEach(function (link) {
+          const href = link.getAttribute('href');
+          if (href.startsWith('//') || href.startsWith('/i18n/')) return;
+          if (link.closest('#langDropdown')) return;
+          if (!href.startsWith(basePath + '/') && href !== basePath) {
+            link.setAttribute('href', basePath + (href === '/' ? '' : href));
+          }
+        });
+      }
+
+      function applyTranslations(data) {
+        translations = data;
+        if (data.page_title) {
+          document.title = data.page_title;
+        }
+        document.querySelectorAll('[data-i18n]').forEach(function (el) {
+          const key = el.getAttribute('data-i18n');
+          if (data[key]) {
+            el.innerHTML = data[key];
+          }
+        });
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
+          const key = el.getAttribute('data-i18n-placeholder');
+          if (data[key]) {
+            el.setAttribute('placeholder', data[key]);
+          }
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initSwitcher);
+      } else {
+        initSwitcher();
+      }
+
+      if (currentLocale !== 'en') {
+        const jsonPath = (window.location.protocol === 'file:' ? 'i18n/' : '/i18n/') + currentLocale + '.json';
+        fetch(jsonPath)
+          .then(function (res) {
+            if (!res.ok) throw new Error('Translation not found: ' + res.status);
+            return res.json();
+          })
+          .then(function (data) {
+            applyTranslations(data);
+            prefixInternalLinks();
+          })
+          .catch(function (err) {
+            console.warn('[i18n] Failed to load translations for ' + currentLocale, err);
+          });
+      }
+    })();
+  </script>
 
   <script>
     // Configuration: Google Apps Script Web App URL for contactkiyoto@gmail.com
@@ -1936,14 +2338,14 @@
         const email = emailInput.value.trim().toLowerCase();
 
         if (!isValidEmail(email)) {
-          status.textContent = 'Please enter a valid email address.';
+          status.textContent = (window.__KIYOTO_I18N && window.__KIYOTO_I18N.t('error_email')) || 'Please enter a valid email address.';
           status.className = 'modal-status error';
           emailInput.focus();
           return;
         }
 
         if (!consentBox.checked) {
-          status.textContent = 'Please confirm your consent to receive updates.';
+          status.textContent = (window.__KIYOTO_I18N && window.__KIYOTO_I18N.t('error_consent')) || 'Please confirm your consent to receive updates.';
           status.className = 'modal-status error';
           consentBox.focus();
           return;
@@ -1979,7 +2381,7 @@
 
         } catch (err) {
           console.error('Waitlist submission error:', err);
-          status.textContent = 'Something went wrong. Please try again.';
+          status.textContent = (window.__KIYOTO_I18N && window.__KIYOTO_I18N.t('error_generic')) || 'Something went wrong. Please try again.';
           status.className = 'modal-status error';
           submitBtn.classList.remove('loading');
           submitBtn.disabled = false;
@@ -2019,7 +2421,8 @@
 
         if (push) {
           try {
-            window.history.pushState({ view: 'about' }, '', '/about');
+            const base = (window.__KIYOTO_I18N && window.__KIYOTO_I18N.basePath) || '';
+            window.history.pushState({ view: 'about' }, '', base + '/about');
           } catch (err) { }
         }
 
@@ -2041,7 +2444,8 @@
 
         if (push) {
           try {
-            window.history.pushState({ view: 'home' }, '', '/');
+            const base = (window.__KIYOTO_I18N && window.__KIYOTO_I18N.basePath) || '/';
+            window.history.pushState({ view: 'home' }, '', base);
           } catch (err) { }
         }
 
@@ -2197,6 +2601,10 @@
 
       // Seamless offline/local preview support for clean URLs
       if (window.location.protocol === 'file:') {
+        document.querySelectorAll('link[rel="icon"], link[rel="apple-touch-icon"]').forEach(function (link) {
+          const h = link.getAttribute('href');
+          if (h && h.startsWith('/')) link.setAttribute('href', h.replace(/^\//, ''));
+        });
         document.querySelectorAll('a[href^="/"]').forEach(function (link) {
           const path = link.getAttribute('href').replace(/^\//, '');
           if (path) link.setAttribute('href', path + '.html');
