@@ -5,111 +5,636 @@
   "redirects": [
     {
       "source": "/",
-      "has": [{ "type": "header", "key": "x-vercel-ip-country", "value": "DE|AT" }],
-      "missing": [{ "type": "cookie", "key": "KIYOTO_LOCALE" }],
+      "has": [
+        {
+          "type": "header",
+          "key": "x-vercel-ip-country",
+          "value": "DE|AT"
+        }
+      ],
+      "missing": [
+        {
+          "type": "cookie",
+          "key": "KIYOTO_LOCALE"
+        }
+      ],
       "destination": "/de",
       "permanent": false
     },
     {
       "source": "/",
-      "has": [{ "type": "header", "key": "x-vercel-ip-country", "value": "JP" }],
-      "missing": [{ "type": "cookie", "key": "KIYOTO_LOCALE" }],
+      "has": [
+        {
+          "type": "header",
+          "key": "x-vercel-ip-country",
+          "value": "JP"
+        }
+      ],
+      "missing": [
+        {
+          "type": "cookie",
+          "key": "KIYOTO_LOCALE"
+        }
+      ],
       "destination": "/jp",
       "permanent": false
     },
     {
       "source": "/",
-      "has": [{ "type": "header", "key": "x-vercel-ip-country", "value": "KR" }],
-      "missing": [{ "type": "cookie", "key": "KIYOTO_LOCALE" }],
+      "has": [
+        {
+          "type": "header",
+          "key": "x-vercel-ip-country",
+          "value": "KR"
+        }
+      ],
+      "missing": [
+        {
+          "type": "cookie",
+          "key": "KIYOTO_LOCALE"
+        }
+      ],
       "destination": "/kr",
       "permanent": false
     },
     {
       "source": "/",
-      "has": [{ "type": "header", "key": "x-vercel-ip-country", "value": "ES|MX|AR|CO|CL|PE|VE|EC|GT|CU|BO|DO|HN|PY|SV|NI|CR|PA|UY" }],
-      "missing": [{ "type": "cookie", "key": "KIYOTO_LOCALE" }],
+      "has": [
+        {
+          "type": "header",
+          "key": "x-vercel-ip-country",
+          "value": "ES|MX|AR|CO|CL|PE|VE|EC|GT|CU|BO|DO|HN|PY|SV|NI|CR|PA|UY"
+        }
+      ],
+      "missing": [
+        {
+          "type": "cookie",
+          "key": "KIYOTO_LOCALE"
+        }
+      ],
       "destination": "/es",
       "permanent": false
     },
     {
       "source": "/",
-      "has": [{ "type": "header", "key": "x-vercel-ip-country", "value": "FR|MC" }],
-      "missing": [{ "type": "cookie", "key": "KIYOTO_LOCALE" }],
+      "has": [
+        {
+          "type": "header",
+          "key": "x-vercel-ip-country",
+          "value": "FR|MC"
+        }
+      ],
+      "missing": [
+        {
+          "type": "cookie",
+          "key": "KIYOTO_LOCALE"
+        }
+      ],
       "destination": "/fr",
       "permanent": false
     },
     {
       "source": "/",
-      "has": [{ "type": "header", "key": "x-vercel-ip-country", "value": "BR|PT" }],
-      "missing": [{ "type": "cookie", "key": "KIYOTO_LOCALE" }],
+      "has": [
+        {
+          "type": "header",
+          "key": "x-vercel-ip-country",
+          "value": "BR|PT"
+        }
+      ],
+      "missing": [
+        {
+          "type": "cookie",
+          "key": "KIYOTO_LOCALE"
+        }
+      ],
       "destination": "/pt",
       "permanent": false
     },
     {
       "source": "/",
-      "has": [{ "type": "header", "key": "x-vercel-ip-country", "value": "CN" }],
-      "missing": [{ "type": "cookie", "key": "KIYOTO_LOCALE" }],
+      "has": [
+        {
+          "type": "header",
+          "key": "x-vercel-ip-country",
+          "value": "CN"
+        }
+      ],
+      "missing": [
+        {
+          "type": "cookie",
+          "key": "KIYOTO_LOCALE"
+        }
+      ],
       "destination": "/zh",
       "permanent": false
     },
     {
       "source": "/",
-      "has": [{ "type": "header", "key": "x-vercel-ip-country", "value": "IT|SM" }],
-      "missing": [{ "type": "cookie", "key": "KIYOTO_LOCALE" }],
+      "has": [
+        {
+          "type": "header",
+          "key": "x-vercel-ip-country",
+          "value": "IT|SM"
+        }
+      ],
+      "missing": [
+        {
+          "type": "cookie",
+          "key": "KIYOTO_LOCALE"
+        }
+      ],
       "destination": "/it",
       "permanent": false
     },
     {
       "source": "/",
-      "has": [{ "type": "header", "key": "x-vercel-ip-country", "value": "NL" }],
-      "missing": [{ "type": "cookie", "key": "KIYOTO_LOCALE" }],
+      "has": [
+        {
+          "type": "header",
+          "key": "x-vercel-ip-country",
+          "value": "NL"
+        }
+      ],
+      "missing": [
+        {
+          "type": "cookie",
+          "key": "KIYOTO_LOCALE"
+        }
+      ],
       "destination": "/nl",
       "permanent": false
     },
     {
       "source": "/",
-      "has": [{ "type": "header", "key": "x-vercel-ip-country", "value": "RU" }],
-      "missing": [{ "type": "cookie", "key": "KIYOTO_LOCALE" }],
+      "has": [
+        {
+          "type": "header",
+          "key": "x-vercel-ip-country",
+          "value": "RU"
+        }
+      ],
+      "missing": [
+        {
+          "type": "cookie",
+          "key": "KIYOTO_LOCALE"
+        }
+      ],
       "destination": "/ru",
       "permanent": false
     },
     {
       "source": "/",
-      "has": [{ "type": "header", "key": "x-vercel-ip-country", "value": "SA|AE|EG|IQ|MA|DZ|SD|SY|YE|TN|JO|LY|LB|OM|KW|QA|BH" }],
-      "missing": [{ "type": "cookie", "key": "KIYOTO_LOCALE" }],
+      "has": [
+        {
+          "type": "header",
+          "key": "x-vercel-ip-country",
+          "value": "SA|AE|EG|IQ|MA|DZ|SD|SY|YE|TN|JO|LY|LB|OM|KW|QA|BH"
+        }
+      ],
+      "missing": [
+        {
+          "type": "cookie",
+          "key": "KIYOTO_LOCALE"
+        }
+      ],
       "destination": "/ar",
       "permanent": false
     },
     {
       "source": "/",
-      "has": [{ "type": "header", "key": "x-vercel-ip-country", "value": "TR" }],
-      "missing": [{ "type": "cookie", "key": "KIYOTO_LOCALE" }],
+      "has": [
+        {
+          "type": "header",
+          "key": "x-vercel-ip-country",
+          "value": "TR"
+        }
+      ],
+      "missing": [
+        {
+          "type": "cookie",
+          "key": "KIYOTO_LOCALE"
+        }
+      ],
       "destination": "/tr",
       "permanent": false
     }
   ],
   "rewrites": [
-    { "source": "/:locale(en|de|ja|jp|ko|kr|es|fr|pt|zh|it|nl|ru|ar|hi|tr)", "destination": "/index.html" },
-    { "source": "/:locale(en|de|ja|jp|ko|kr|es|fr|pt|zh|it|nl|ru|ar|hi|tr)/about", "destination": "/index.html" },
-    { "source": "/:locale(en|de|ja|jp|ko|kr|es|fr|pt|zh|it|nl|ru|ar|hi|tr)/privacy", "destination": "/privacy.html" },
-    { "source": "/:locale(en|de|ja|jp|ko|kr|es|fr|pt|zh|it|nl|ru|ar|hi|tr)/terms", "destination": "/terms.html" },
-    { "source": "/:locale(en|de|ja|jp|ko|kr|es|fr|pt|zh|it|nl|ru|ar|hi|tr)/cookies", "destination": "/cookies.html" },
-    { "source": "/:locale(en|de|ja|jp|ko|kr|es|fr|pt|zh|it|nl|ru|ar|hi|tr)/refunds", "destination": "/refunds.html" },
-    { "source": "/about", "destination": "/index.html" }
+    {
+      "source": "/en",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/de",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/ja",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/jp",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/ko",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/kr",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/es",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/fr",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/pt",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/zh",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/it",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/nl",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/ru",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/ar",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/hi",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/tr",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/en/about",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/de/about",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/ja/about",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/jp/about",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/ko/about",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/kr/about",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/es/about",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/fr/about",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/pt/about",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/zh/about",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/it/about",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/nl/about",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/ru/about",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/ar/about",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/hi/about",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/tr/about",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/en/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/en/terms",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/en/cookies",
+      "destination": "/cookies.html"
+    },
+    {
+      "source": "/en/refunds",
+      "destination": "/refunds.html"
+    },
+    {
+      "source": "/de/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/de/terms",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/de/cookies",
+      "destination": "/cookies.html"
+    },
+    {
+      "source": "/de/refunds",
+      "destination": "/refunds.html"
+    },
+    {
+      "source": "/ja/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/ja/terms",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/ja/cookies",
+      "destination": "/cookies.html"
+    },
+    {
+      "source": "/ja/refunds",
+      "destination": "/refunds.html"
+    },
+    {
+      "source": "/jp/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/jp/terms",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/jp/cookies",
+      "destination": "/cookies.html"
+    },
+    {
+      "source": "/jp/refunds",
+      "destination": "/refunds.html"
+    },
+    {
+      "source": "/ko/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/ko/terms",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/ko/cookies",
+      "destination": "/cookies.html"
+    },
+    {
+      "source": "/ko/refunds",
+      "destination": "/refunds.html"
+    },
+    {
+      "source": "/kr/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/kr/terms",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/kr/cookies",
+      "destination": "/cookies.html"
+    },
+    {
+      "source": "/kr/refunds",
+      "destination": "/refunds.html"
+    },
+    {
+      "source": "/es/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/es/terms",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/es/cookies",
+      "destination": "/cookies.html"
+    },
+    {
+      "source": "/es/refunds",
+      "destination": "/refunds.html"
+    },
+    {
+      "source": "/fr/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/fr/terms",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/fr/cookies",
+      "destination": "/cookies.html"
+    },
+    {
+      "source": "/fr/refunds",
+      "destination": "/refunds.html"
+    },
+    {
+      "source": "/pt/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/pt/terms",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/pt/cookies",
+      "destination": "/cookies.html"
+    },
+    {
+      "source": "/pt/refunds",
+      "destination": "/refunds.html"
+    },
+    {
+      "source": "/zh/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/zh/terms",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/zh/cookies",
+      "destination": "/cookies.html"
+    },
+    {
+      "source": "/zh/refunds",
+      "destination": "/refunds.html"
+    },
+    {
+      "source": "/it/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/it/terms",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/it/cookies",
+      "destination": "/cookies.html"
+    },
+    {
+      "source": "/it/refunds",
+      "destination": "/refunds.html"
+    },
+    {
+      "source": "/nl/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/nl/terms",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/nl/cookies",
+      "destination": "/cookies.html"
+    },
+    {
+      "source": "/nl/refunds",
+      "destination": "/refunds.html"
+    },
+    {
+      "source": "/ru/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/ru/terms",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/ru/cookies",
+      "destination": "/cookies.html"
+    },
+    {
+      "source": "/ru/refunds",
+      "destination": "/refunds.html"
+    },
+    {
+      "source": "/ar/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/ar/terms",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/ar/cookies",
+      "destination": "/cookies.html"
+    },
+    {
+      "source": "/ar/refunds",
+      "destination": "/refunds.html"
+    },
+    {
+      "source": "/hi/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/hi/terms",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/hi/cookies",
+      "destination": "/cookies.html"
+    },
+    {
+      "source": "/hi/refunds",
+      "destination": "/refunds.html"
+    },
+    {
+      "source": "/tr/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/tr/terms",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/tr/cookies",
+      "destination": "/cookies.html"
+    },
+    {
+      "source": "/tr/refunds",
+      "destination": "/refunds.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/index.html"
+    }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
       ]
     },
     {
       "source": "/(.*)\\.(html|json)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
       ]
     }
   ]
