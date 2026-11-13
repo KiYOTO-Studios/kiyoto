@@ -187,6 +187,13 @@
           if (window.location.protocol === 'file:') {
             e.preventDefault();
             window.location.href = 'index.html';
+            return;
+          }
+          const cookieMatch = document.cookie.match(/KIYOTO_LOCALE=([a-z]+)/i);
+          const userLocale = cookieMatch ? cookieMatch[1].toLowerCase() : 'en';
+          if (userLocale && userLocale !== 'en') {
+            e.preventDefault();
+            window.location.href = '/' + userLocale;
           }
         });
       }

@@ -218,6 +218,326 @@
       ],
       "destination": "/tr",
       "permanent": false
+    },
+    {
+      "source": "/en/privacy",
+      "destination": "/privacy",
+      "permanent": false
+    },
+    {
+      "source": "/en/terms",
+      "destination": "/terms",
+      "permanent": false
+    },
+    {
+      "source": "/en/cookies",
+      "destination": "/cookies",
+      "permanent": false
+    },
+    {
+      "source": "/en/refunds",
+      "destination": "/refunds",
+      "permanent": false
+    },
+    {
+      "source": "/de/privacy",
+      "destination": "/privacy",
+      "permanent": false
+    },
+    {
+      "source": "/de/terms",
+      "destination": "/terms",
+      "permanent": false
+    },
+    {
+      "source": "/de/cookies",
+      "destination": "/cookies",
+      "permanent": false
+    },
+    {
+      "source": "/de/refunds",
+      "destination": "/refunds",
+      "permanent": false
+    },
+    {
+      "source": "/ja/privacy",
+      "destination": "/privacy",
+      "permanent": false
+    },
+    {
+      "source": "/ja/terms",
+      "destination": "/terms",
+      "permanent": false
+    },
+    {
+      "source": "/ja/cookies",
+      "destination": "/cookies",
+      "permanent": false
+    },
+    {
+      "source": "/ja/refunds",
+      "destination": "/refunds",
+      "permanent": false
+    },
+    {
+      "source": "/jp/privacy",
+      "destination": "/privacy",
+      "permanent": false
+    },
+    {
+      "source": "/jp/terms",
+      "destination": "/terms",
+      "permanent": false
+    },
+    {
+      "source": "/jp/cookies",
+      "destination": "/cookies",
+      "permanent": false
+    },
+    {
+      "source": "/jp/refunds",
+      "destination": "/refunds",
+      "permanent": false
+    },
+    {
+      "source": "/ko/privacy",
+      "destination": "/privacy",
+      "permanent": false
+    },
+    {
+      "source": "/ko/terms",
+      "destination": "/terms",
+      "permanent": false
+    },
+    {
+      "source": "/ko/cookies",
+      "destination": "/cookies",
+      "permanent": false
+    },
+    {
+      "source": "/ko/refunds",
+      "destination": "/refunds",
+      "permanent": false
+    },
+    {
+      "source": "/kr/privacy",
+      "destination": "/privacy",
+      "permanent": false
+    },
+    {
+      "source": "/kr/terms",
+      "destination": "/terms",
+      "permanent": false
+    },
+    {
+      "source": "/kr/cookies",
+      "destination": "/cookies",
+      "permanent": false
+    },
+    {
+      "source": "/kr/refunds",
+      "destination": "/refunds",
+      "permanent": false
+    },
+    {
+      "source": "/es/privacy",
+      "destination": "/privacy",
+      "permanent": false
+    },
+    {
+      "source": "/es/terms",
+      "destination": "/terms",
+      "permanent": false
+    },
+    {
+      "source": "/es/cookies",
+      "destination": "/cookies",
+      "permanent": false
+    },
+    {
+      "source": "/es/refunds",
+      "destination": "/refunds",
+      "permanent": false
+    },
+    {
+      "source": "/fr/privacy",
+      "destination": "/privacy",
+      "permanent": false
+    },
+    {
+      "source": "/fr/terms",
+      "destination": "/terms",
+      "permanent": false
+    },
+    {
+      "source": "/fr/cookies",
+      "destination": "/cookies",
+      "permanent": false
+    },
+    {
+      "source": "/fr/refunds",
+      "destination": "/refunds",
+      "permanent": false
+    },
+    {
+      "source": "/pt/privacy",
+      "destination": "/privacy",
+      "permanent": false
+    },
+    {
+      "source": "/pt/terms",
+      "destination": "/terms",
+      "permanent": false
+    },
+    {
+      "source": "/pt/cookies",
+      "destination": "/cookies",
+      "permanent": false
+    },
+    {
+      "source": "/pt/refunds",
+      "destination": "/refunds",
+      "permanent": false
+    },
+    {
+      "source": "/zh/privacy",
+      "destination": "/privacy",
+      "permanent": false
+    },
+    {
+      "source": "/zh/terms",
+      "destination": "/terms",
+      "permanent": false
+    },
+    {
+      "source": "/zh/cookies",
+      "destination": "/cookies",
+      "permanent": false
+    },
+    {
+      "source": "/zh/refunds",
+      "destination": "/refunds",
+      "permanent": false
+    },
+    {
+      "source": "/it/privacy",
+      "destination": "/privacy",
+      "permanent": false
+    },
+    {
+      "source": "/it/terms",
+      "destination": "/terms",
+      "permanent": false
+    },
+    {
+      "source": "/it/cookies",
+      "destination": "/cookies",
+      "permanent": false
+    },
+    {
+      "source": "/it/refunds",
+      "destination": "/refunds",
+      "permanent": false
+    },
+    {
+      "source": "/nl/privacy",
+      "destination": "/privacy",
+      "permanent": false
+    },
+    {
+      "source": "/nl/terms",
+      "destination": "/terms",
+      "permanent": false
+    },
+    {
+      "source": "/nl/cookies",
+      "destination": "/cookies",
+      "permanent": false
+    },
+    {
+      "source": "/nl/refunds",
+      "destination": "/refunds",
+      "permanent": false
+    },
+    {
+      "source": "/ru/privacy",
+      "destination": "/privacy",
+      "permanent": false
+    },
+    {
+      "source": "/ru/terms",
+      "destination": "/terms",
+      "permanent": false
+    },
+    {
+      "source": "/ru/cookies",
+      "destination": "/cookies",
+      "permanent": false
+    },
+    {
+      "source": "/ru/refunds",
+      "destination": "/refunds",
+      "permanent": false
+    },
+    {
+      "source": "/ar/privacy",
+      "destination": "/privacy",
+      "permanent": false
+    },
+    {
+      "source": "/ar/terms",
+      "destination": "/terms",
+      "permanent": false
+    },
+    {
+      "source": "/ar/cookies",
+      "destination": "/cookies",
+      "permanent": false
+    },
+    {
+      "source": "/ar/refunds",
+      "destination": "/refunds",
+      "permanent": false
+    },
+    {
+      "source": "/hi/privacy",
+      "destination": "/privacy",
+      "permanent": false
+    },
+    {
+      "source": "/hi/terms",
+      "destination": "/terms",
+      "permanent": false
+    },
+    {
+      "source": "/hi/cookies",
+      "destination": "/cookies",
+      "permanent": false
+    },
+    {
+      "source": "/hi/refunds",
+      "destination": "/refunds",
+      "permanent": false
+    },
+    {
+      "source": "/tr/privacy",
+      "destination": "/privacy",
+      "permanent": false
+    },
+    {
+      "source": "/tr/terms",
+      "destination": "/terms",
+      "permanent": false
+    },
+    {
+      "source": "/tr/cookies",
+      "destination": "/cookies",
+      "permanent": false
+    },
+    {
+      "source": "/tr/refunds",
+      "destination": "/refunds",
+      "permanent": false
     }
   ],
   "rewrites": [
@@ -226,67 +546,11 @@
       "destination": "/index.html"
     },
     {
-      "source": "/de",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/ja",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/jp",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/ko",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/kr",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/es",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/fr",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/pt",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/zh",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/it",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/nl",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/ru",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/ar",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/hi",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/tr",
-      "destination": "/index.html"
-    },
-    {
       "source": "/en/about",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/de",
       "destination": "/index.html"
     },
     {
@@ -294,7 +558,15 @@
       "destination": "/index.html"
     },
     {
+      "source": "/ja",
+      "destination": "/index.html"
+    },
+    {
       "source": "/ja/about",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/jp",
       "destination": "/index.html"
     },
     {
@@ -302,7 +574,15 @@
       "destination": "/index.html"
     },
     {
+      "source": "/ko",
+      "destination": "/index.html"
+    },
+    {
       "source": "/ko/about",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/kr",
       "destination": "/index.html"
     },
     {
@@ -310,7 +590,15 @@
       "destination": "/index.html"
     },
     {
+      "source": "/es",
+      "destination": "/index.html"
+    },
+    {
       "source": "/es/about",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/fr",
       "destination": "/index.html"
     },
     {
@@ -318,7 +606,15 @@
       "destination": "/index.html"
     },
     {
+      "source": "/pt",
+      "destination": "/index.html"
+    },
+    {
       "source": "/pt/about",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/zh",
       "destination": "/index.html"
     },
     {
@@ -326,7 +622,15 @@
       "destination": "/index.html"
     },
     {
+      "source": "/it",
+      "destination": "/index.html"
+    },
+    {
       "source": "/it/about",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/nl",
       "destination": "/index.html"
     },
     {
@@ -334,7 +638,15 @@
       "destination": "/index.html"
     },
     {
+      "source": "/ru",
+      "destination": "/index.html"
+    },
+    {
       "source": "/ru/about",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/ar",
       "destination": "/index.html"
     },
     {
@@ -342,268 +654,20 @@
       "destination": "/index.html"
     },
     {
+      "source": "/hi",
+      "destination": "/index.html"
+    },
+    {
       "source": "/hi/about",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/tr",
       "destination": "/index.html"
     },
     {
       "source": "/tr/about",
       "destination": "/index.html"
-    },
-    {
-      "source": "/en/privacy",
-      "destination": "/privacy.html"
-    },
-    {
-      "source": "/en/terms",
-      "destination": "/terms.html"
-    },
-    {
-      "source": "/en/cookies",
-      "destination": "/cookies.html"
-    },
-    {
-      "source": "/en/refunds",
-      "destination": "/refunds.html"
-    },
-    {
-      "source": "/de/privacy",
-      "destination": "/privacy.html"
-    },
-    {
-      "source": "/de/terms",
-      "destination": "/terms.html"
-    },
-    {
-      "source": "/de/cookies",
-      "destination": "/cookies.html"
-    },
-    {
-      "source": "/de/refunds",
-      "destination": "/refunds.html"
-    },
-    {
-      "source": "/ja/privacy",
-      "destination": "/privacy.html"
-    },
-    {
-      "source": "/ja/terms",
-      "destination": "/terms.html"
-    },
-    {
-      "source": "/ja/cookies",
-      "destination": "/cookies.html"
-    },
-    {
-      "source": "/ja/refunds",
-      "destination": "/refunds.html"
-    },
-    {
-      "source": "/jp/privacy",
-      "destination": "/privacy.html"
-    },
-    {
-      "source": "/jp/terms",
-      "destination": "/terms.html"
-    },
-    {
-      "source": "/jp/cookies",
-      "destination": "/cookies.html"
-    },
-    {
-      "source": "/jp/refunds",
-      "destination": "/refunds.html"
-    },
-    {
-      "source": "/ko/privacy",
-      "destination": "/privacy.html"
-    },
-    {
-      "source": "/ko/terms",
-      "destination": "/terms.html"
-    },
-    {
-      "source": "/ko/cookies",
-      "destination": "/cookies.html"
-    },
-    {
-      "source": "/ko/refunds",
-      "destination": "/refunds.html"
-    },
-    {
-      "source": "/kr/privacy",
-      "destination": "/privacy.html"
-    },
-    {
-      "source": "/kr/terms",
-      "destination": "/terms.html"
-    },
-    {
-      "source": "/kr/cookies",
-      "destination": "/cookies.html"
-    },
-    {
-      "source": "/kr/refunds",
-      "destination": "/refunds.html"
-    },
-    {
-      "source": "/es/privacy",
-      "destination": "/privacy.html"
-    },
-    {
-      "source": "/es/terms",
-      "destination": "/terms.html"
-    },
-    {
-      "source": "/es/cookies",
-      "destination": "/cookies.html"
-    },
-    {
-      "source": "/es/refunds",
-      "destination": "/refunds.html"
-    },
-    {
-      "source": "/fr/privacy",
-      "destination": "/privacy.html"
-    },
-    {
-      "source": "/fr/terms",
-      "destination": "/terms.html"
-    },
-    {
-      "source": "/fr/cookies",
-      "destination": "/cookies.html"
-    },
-    {
-      "source": "/fr/refunds",
-      "destination": "/refunds.html"
-    },
-    {
-      "source": "/pt/privacy",
-      "destination": "/privacy.html"
-    },
-    {
-      "source": "/pt/terms",
-      "destination": "/terms.html"
-    },
-    {
-      "source": "/pt/cookies",
-      "destination": "/cookies.html"
-    },
-    {
-      "source": "/pt/refunds",
-      "destination": "/refunds.html"
-    },
-    {
-      "source": "/zh/privacy",
-      "destination": "/privacy.html"
-    },
-    {
-      "source": "/zh/terms",
-      "destination": "/terms.html"
-    },
-    {
-      "source": "/zh/cookies",
-      "destination": "/cookies.html"
-    },
-    {
-      "source": "/zh/refunds",
-      "destination": "/refunds.html"
-    },
-    {
-      "source": "/it/privacy",
-      "destination": "/privacy.html"
-    },
-    {
-      "source": "/it/terms",
-      "destination": "/terms.html"
-    },
-    {
-      "source": "/it/cookies",
-      "destination": "/cookies.html"
-    },
-    {
-      "source": "/it/refunds",
-      "destination": "/refunds.html"
-    },
-    {
-      "source": "/nl/privacy",
-      "destination": "/privacy.html"
-    },
-    {
-      "source": "/nl/terms",
-      "destination": "/terms.html"
-    },
-    {
-      "source": "/nl/cookies",
-      "destination": "/cookies.html"
-    },
-    {
-      "source": "/nl/refunds",
-      "destination": "/refunds.html"
-    },
-    {
-      "source": "/ru/privacy",
-      "destination": "/privacy.html"
-    },
-    {
-      "source": "/ru/terms",
-      "destination": "/terms.html"
-    },
-    {
-      "source": "/ru/cookies",
-      "destination": "/cookies.html"
-    },
-    {
-      "source": "/ru/refunds",
-      "destination": "/refunds.html"
-    },
-    {
-      "source": "/ar/privacy",
-      "destination": "/privacy.html"
-    },
-    {
-      "source": "/ar/terms",
-      "destination": "/terms.html"
-    },
-    {
-      "source": "/ar/cookies",
-      "destination": "/cookies.html"
-    },
-    {
-      "source": "/ar/refunds",
-      "destination": "/refunds.html"
-    },
-    {
-      "source": "/hi/privacy",
-      "destination": "/privacy.html"
-    },
-    {
-      "source": "/hi/terms",
-      "destination": "/terms.html"
-    },
-    {
-      "source": "/hi/cookies",
-      "destination": "/cookies.html"
-    },
-    {
-      "source": "/hi/refunds",
-      "destination": "/refunds.html"
-    },
-    {
-      "source": "/tr/privacy",
-      "destination": "/privacy.html"
-    },
-    {
-      "source": "/tr/terms",
-      "destination": "/terms.html"
-    },
-    {
-      "source": "/tr/cookies",
-      "destination": "/cookies.html"
-    },
-    {
-      "source": "/tr/refunds",
-      "destination": "/refunds.html"
     },
     {
       "source": "/about",

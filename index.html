@@ -2155,6 +2155,15 @@
           const href = link.getAttribute('href');
           if (href.startsWith('//') || href.startsWith('/i18n/')) return;
           if (link.closest('#langDropdown')) return;
+
+          // Legal disclosure pages are global clean URLs: /privacy, /terms, /cookies, /refunds
+          if (href === '/privacy' || href === '/terms' || href === '/cookies' || href === '/refunds' ||
+              href.endsWith('/privacy') || href.endsWith('/terms') || href.endsWith('/cookies') || href.endsWith('/refunds')) {
+            const clean = href.replace(/^\/(?:[a-z]{2})\//, '/');
+            link.setAttribute('href', clean);
+            return;
+          }
+
           let cleanHref = href;
           DISPLAY_LOCALES.forEach(function (item) {
             if (cleanHref === '/' + item.code) cleanHref = '/';
